@@ -13,12 +13,12 @@ var leaderRouter  = require('./routes/leaderRouter');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 const mongoose = require('mongoose');
-
-const Dishes = require('./models/dishes');
-const Leaders = require('./models/leaders');
-const Promotions = require('./models/promotions');
-const url = 'mongodb://localhost:27017/conFusion';
-const connect = mongoose.connect(url);
+mongoose.Promise = require('bluebird')
+var config = require('./config');
+const url =config.mongoUrl;
+const connect = mongoose.connect(url,{
+  useMongoClient : true
+});
 
 connect.then((db) => {
   console.log("Connected correctly to the server");
