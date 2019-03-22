@@ -185,7 +185,7 @@ dishRouter.route('/:dishId')
   .put(cors.corsWithOptions,authenticate.verifyUser,(req, res, next) => {
       Dishes.findById(req.params.dishId)
       .then((dish) => {
-          if(req.user._id.equals(req.params.commentId)){
+          if(!req.user._id.equals(req.params.commentId)){
             res.statusCode = 403;
             res.end('Not authenticated for this operation');
             next(err);
