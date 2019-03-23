@@ -83,7 +83,7 @@ commentRouter.route('/:commentId')
                 return next(err);
             }
             req.body.author = req.user._id
-            Comments.findByIdAndUpdate(req.params.commentId.{
+            Comments.findByIdAndUpdate(req.params.commentId,{
                     $set : req.body
             },{new:true})
             .then((comment) => {

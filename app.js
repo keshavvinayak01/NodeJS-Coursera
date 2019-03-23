@@ -9,10 +9,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var dishRouter  = require('./routes/dishRouter');
 var promoRouter  = require('./routes/promoRouter');
-var commentRouter = require('routes/commentRouter');
+var commentRouter = require('./routes/commentRouter');
 var leaderRouter  = require('./routes/leaderRouter');
 var uploadRouter  = require('./routes/uploadRouter');
-var favouriteRouter  = require('./routes/favouriteRouter');
+var favoriteRouter  = require('./routes/favoriteRouter');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 const mongoose = require('mongoose');
@@ -57,7 +57,7 @@ app.use('/leaders', leaderRouter);
 app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/imageUpload',uploadRouter);
-app.use('/favourites',favouriteRouter);
+app.use('/favorites',favoriteRouter);
 app.use('/coments',commentRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
