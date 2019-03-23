@@ -44,7 +44,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser('12345-67890-02341-12536'));
 
-
 app.use(passport.initialize());
 
 app.use('/', indexRouter);
